@@ -1,0 +1,22 @@
+version: '2'
+services:
+  php:
+    build: ./php/
+    links:
+      - mariadb
+    expose:
+      - "9000"
+    volumes:
+      - ./fulfillmyapparel/:/var/www/html
+    ports:
+      - 80:80
+      - 443:443
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb-1-dgwsr
+    restart: always
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_USER: fullfill
+      MYSQL_PASSWORD: Temple_46
+      MYSQL_DATABASE: fullfill_db
