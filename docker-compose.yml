@@ -20,5 +20,5 @@ services:
       MYSQL_USER: fullfill
       MYSQL_PASSWORD: Temple_46
       MYSQL_DATABASE: fullfill_db
-    expose:
-      - "3306"
+    ports:
+      - 3306:3306
